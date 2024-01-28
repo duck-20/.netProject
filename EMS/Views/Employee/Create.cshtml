@@ -1,0 +1,61 @@
+﻿@model EMS.Models.CreateEmployeeViewModel
+<body class="bg-light">
+<div class="container py-3">
+	<div class="card">
+	<h2 class="bg-black text-white card-header py-4">Employee Form</h2>
+	<div class="card-body">
+	<form class="border-success">
+		
+			
+			<div class="row mt-2">
+				<div class="col-sm-6">
+					<label for="FirstName" class="my-1">
+						First Name
+					</label>
+					<input placeholder="Enter Your First Name" asp-for="FirstName" class="form-control"  />
+				</div>
+				<div class="col-sm-6">
+				<label for="LastName" class="my-1">
+						Last Name
+					</label>
+					<input placeholder="Enter Your Last Name" asp-for="LastName" class="form-control" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<label for="Gender" class="my-1">
+						Gender
+					</label>
+					<select class="form-select" asp-for="Gender">
+						<option value=0>Select Gender</option>
+						<option value=1>Male</option>
+						<option value=2>Female</option>
+						<option value=-1>Others</option>
+					</select>
+				</div>
+			<div class="col-sm-4">
+				<label for="Email" class="my-1">
+					Email
+				</label>
+				<input placeholder="Enter Your E-mail" asp-for="Email" class="form-control" />
+			</div>
+				<div class="col-sm-4">
+					<label for="PhoneNumber" class="my-1">
+						PhoneNumber
+					</label>
+					<input class="form-control" placeholder="Enter Your Phone Number" asp-for="PhoneNumber" />
+				</div>
+			</div>
+		<div class="">
+			<label for="Address" class="my-1">
+				Address
+			</label>
+			<input placeholder="Enter Your Address" asp-for="Address" class="form-control" />
+		</div>
+			<input type="submit" value="Create" class="btn btn-dark my-3" />
+		
+	</form>
+	</div>
+</div>
+</div>
+</body>
