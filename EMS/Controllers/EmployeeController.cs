@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EMS.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EMS.Controllers
 {
@@ -12,5 +13,11 @@ namespace EMS.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(CreateEmployeeViewModel model)
+        {
+            return View();
+        }
+
     }
 }

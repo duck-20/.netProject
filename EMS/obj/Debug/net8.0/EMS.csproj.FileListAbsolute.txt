@@ -28,3 +28,4 @@ D:\.netProject\EMS\obj\Debug\net8.0\refint\EMS.dll
 D:\.netProject\EMS\obj\Debug\net8.0\EMS.pdb
 D:\.netProject\EMS\obj\Debug\net8.0\EMS.genruntimeconfig.cache
 D:\.netProject\EMS\obj\Debug\net8.0\ref\EMS.dll
+D:\.netProject\EMS\obj\Debug\net8.0\EMS.sourcelink.json

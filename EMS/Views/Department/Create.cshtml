@@ -1,16 +1,24 @@
 ﻿@model EMS.Models.SetUpDepartmentViewModel
+@{
+	ViewData["Title"] = "Create Department";
+}
 <body class="bg-light">
 <div class="container py-3">
 	<div class="card">
 		<h2 class="card-header py-4 bg-black text-light">Create Department</h2>
 		<div class="card-body">
-			<form class="form-floating">
+			<form class="" asp-controller="Department" asp-action="Create">
 				<div class="row">
 					<div class="col-sm-6">
 						<label for="DeptName" class="my-2">Department Name</label>
-						<input placeholder="Enter Department Name" asp-for="DeptName" class="form-control" />
+						<input placeholder="Enter Department Name" asp-for="DeptName" class="form-control" autocomplete="off" />
 							
 					</div>
+						<div class="col-sm-6">
+							<label for="DisplayOrder" class="my-2">Department Order</label>
+							<input placeholder="Enter Department Order" asp-for="DisplayOrder" class="form-control" autocomplete="off"/>
+
+						</div>
 				</div>
 				<input type="submit" value="Create" class="btn btn-dark mt-3" />
 			</form>

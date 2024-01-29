@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EMS.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EMS.Controllers
 {
@@ -9,6 +10,11 @@ namespace EMS.Controllers
             return View();
         }
         public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(SetUpDepartmentViewModel model)
         {
             return View();
         }
