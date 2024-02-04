@@ -2,7 +2,7 @@
 
 namespace EMS.Models
 {
-    public class CreateEmployeeViewModel
+    public class EmployeeInfoViewModel
     {
         [Required]
         public string FirstName { get; set; } = string.Empty;

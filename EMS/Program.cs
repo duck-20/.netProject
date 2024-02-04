@@ -1,3 +1,6 @@
+using EMS.Entities;
+using EMS.Services.Interface;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

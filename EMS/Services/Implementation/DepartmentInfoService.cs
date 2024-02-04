@@ -3,7 +3,7 @@ using EMS.Services.Interface;
 
 namespace EMS.Services.Implementation
 {
-    public class DepartmentImplementation:IDepartmentInfo
+    public class DepartmentInfoService:IDepartmentInfo
     {
         public int getDepartmentById(int departmentId)
         {
@@ -11,6 +11,8 @@ namespace EMS.Services.Implementation
         }
         public void saveDepartmentId(SetUpDepartmentViewModel model)
         {
+            SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
+            setUpDepartmentViewModel.DeptName = model.DeptName;
 
         }
         public void deleteDepartmentId(int departmentId)
