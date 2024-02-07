@@ -22,6 +22,8 @@ namespace EMS.Controllers
         [HttpPost]
         public IActionResult Create(EmployeeInfoViewModel model)
         {
+            var result = _EmployeeInfo;
+            result.saveEmployeeId(model);
             return View();
         }
 

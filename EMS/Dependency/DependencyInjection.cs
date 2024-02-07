@@ -6,8 +6,6 @@ namespace EMS.Dependency
     {
         public void configurationService(IServiceCollection services)
         {
-            services.AddMvc();
-            services.AddScoped<IEmployeeInfo, IEmployeeInfo>();
         }
     }
 }

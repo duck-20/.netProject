@@ -23,6 +23,8 @@ namespace EMS.Controllers
         [HttpPost]
         public IActionResult Create(SetUpDepartmentViewModel model)
         {
+            var result = _DepartmentInfo;
+            result.saveDepartmentId(model);
             return View();
         }
     }

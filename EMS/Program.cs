@@ -1,11 +1,13 @@
 using EMS.Entities;
+using EMS.Services.Implementation;
 using EMS.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<IEmployeeInfo,EmployeeInfoService>();
+builder.Services.AddScoped<IDepartmentInfo,DepartmentInfoService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
