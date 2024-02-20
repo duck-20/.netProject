@@ -20,6 +20,15 @@ namespace EMS.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult DisplayData()
+        {
+            var data = _DepartmentInfo.SetupDepartmentList();
+            SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
+            setUpDepartmentViewModel.DeptList = data;
+            return View(setUpDepartmentViewModel.DeptList);
+            return View();
+        }
         [HttpPost]
         public IActionResult Create(SetUpDepartmentViewModel model)
         {

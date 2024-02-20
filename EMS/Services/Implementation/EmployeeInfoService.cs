@@ -26,5 +26,26 @@ namespace EMS.Services.Implementation
         {
 
         }
+
+        public List<EmployeeInfoViewModel> getEmployeeList()
+        {
+            EmployeeInfoViewModel model = new EmployeeInfoViewModel();
+            var EmployeeList=new List<EmployeeInfoViewModel>();
+            model.FirstName = "Ayush";
+            model.LastName = "Pakhrin";
+            model.Email = "Pakhrinayush56@gmail.com";
+            model.Address = "Boudha";
+            model.PhoneNumber = "9813493440";
+            model.Gender = 1;
+            EmployeeList.Add(model);
+            model.FirstName = "Robina";
+            model.LastName = "Shahi";
+            model.Email = "shahirobina45@gmail.com";
+            model.Address = "Teku";
+            model.PhoneNumber = "9804774785";
+            model.Gender = 2;
+            EmployeeList.Add(model);
+            return EmployeeList;
+        }
     }
 }

@@ -17,6 +17,12 @@ namespace EMS.Models
         [Required]
         public int? Gender { get; set; }
         public string ProfilePath {  get; set; } = string.Empty;
+        public List<EmployeeInfoViewModel> Employees { get; set; }
+        public EmployeeInfoViewModel()
+        {
+            Employees = new List<EmployeeInfoViewModel>();
+        }
+
 
     }
 }

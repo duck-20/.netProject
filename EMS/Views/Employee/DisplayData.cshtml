@@ -1,0 +1,39 @@
+﻿@model List<EMS.Models.EmployeeInfoViewModel>
+@{
+    ViewData["Title"] = "Employee Details";
+    int count = 0;
+}
+<body class="bg-light">
+<div class="mt-5 card">
+    <h1 class="bg-black text-light card-header py-4">Employee Data</h1>
+<table class="table card-body">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">SNo.</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Address</th>
+            <th scope="col">PhoneNo.</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Profile Image</th>
+        </tr>
+    </thead>
+            <tbody>
+        @foreach(var data in Model){
+        
+        <tr>
+            <th scope="row">@(count=count+1)</th>
+            <td>@data.FirstName</td>
+            <td>@data.LastName</td>
+            <td>@data.Email</td>
+            <td>@data.Address</td>
+            <td>@data.PhoneNumber</td>
+            <td>@data.Gender</td>
+            <td>@data.ProfilePath</td>
+        </tr>
+        }
+            </tbody>
+    </table>
+    </div>
+</body>

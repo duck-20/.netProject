@@ -5,6 +5,16 @@ namespace EMS.Services.Implementation
 {
     public class DepartmentInfoService:IDepartmentInfo
     {
+        public List<SetUpDepartmentViewModel> SetupDepartmentList()
+        {
+            SetUpDepartmentViewModel viewModel = new SetUpDepartmentViewModel();
+            var departmentList = new List<SetUpDepartmentViewModel>();
+            viewModel.DeptName = "BCA";
+            departmentList.Add(viewModel);
+            return departmentList;
+            
+
+        }
         public int getDepartmentById(int departmentId)
         {
             return 1;

@@ -19,12 +19,20 @@ namespace EMS.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult DisplayData()
+        {
+            EmployeeInfoViewModel employeeInfoViewModel = new EmployeeInfoViewModel();
+            var data=_EmployeeInfo.getEmployeeList();
+            employeeInfoViewModel.Employees = data;
+            return View(employeeInfoViewModel.Employees);
+        }
         [HttpPost]
         public IActionResult Create(EmployeeInfoViewModel model)
         {
             var result = _EmployeeInfo;
             result.saveEmployeeId(model);
-            return View();
+            return RedirectToAction("DisplayData");
         }
 
     }
