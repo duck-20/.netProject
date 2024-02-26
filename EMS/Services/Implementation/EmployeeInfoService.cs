@@ -29,22 +29,23 @@ namespace EMS.Services.Implementation
 
         public List<EmployeeInfoViewModel> getEmployeeList()
         {
-            EmployeeInfoViewModel model = new EmployeeInfoViewModel();
+            EmployeeInfoViewModel model1 = new EmployeeInfoViewModel();
+            EmployeeInfoViewModel model2 = new EmployeeInfoViewModel();
             var EmployeeList=new List<EmployeeInfoViewModel>();
-            model.FirstName = "Ayush";
-            model.LastName = "Pakhrin";
-            model.Email = "Pakhrinayush56@gmail.com";
-            model.Address = "Boudha";
-            model.PhoneNumber = "9813493440";
-            model.Gender = 1;
-            EmployeeList.Add(model);
-            model.FirstName = "Robina";
-            model.LastName = "Shahi";
-            model.Email = "shahirobina45@gmail.com";
-            model.Address = "Teku";
-            model.PhoneNumber = "9804774785";
-            model.Gender = 2;
-            EmployeeList.Add(model);
+            model1.FirstName = "Ayush";
+            model1.LastName = "Pakhrin";
+            model1.Email = "Pakhrinayush56@gmail.com";
+            model1.Address = "Boudha";
+            model1.PhoneNumber = "9813493440";
+            model1.Gender = 1;
+            EmployeeList.Add(model1);
+            model2.FirstName = "Robina";
+            model2.LastName = "Shahi";
+            model2.Email = "shahirobina45@gmail.com";
+            model2.Address = "Teku";
+            model2.PhoneNumber = "9804774785";
+            model2.Gender = 2;
+            EmployeeList.Add(model2);
             return EmployeeList;
         }
     }

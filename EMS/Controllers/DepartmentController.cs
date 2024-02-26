@@ -26,8 +26,7 @@ namespace EMS.Controllers
             var data = _DepartmentInfo.SetupDepartmentList();
             SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
             setUpDepartmentViewModel.DeptList = data;
-            return View(setUpDepartmentViewModel.DeptList);
-            return View();
+            return View(setUpDepartmentViewModel);
         }
         [HttpPost]
         public IActionResult Create(SetUpDepartmentViewModel model)

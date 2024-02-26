@@ -25,7 +25,11 @@ namespace EMS.Controllers
             EmployeeInfoViewModel employeeInfoViewModel = new EmployeeInfoViewModel();
             var data=_EmployeeInfo.getEmployeeList();
             employeeInfoViewModel.Employees = data;
-            return View(employeeInfoViewModel.Employees);
+            return View(employeeInfoViewModel);
+        }
+        public IActionResult Edit()
+        {
+            return View();
         }
         [HttpPost]
         public IActionResult Create(EmployeeInfoViewModel model)
