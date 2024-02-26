@@ -13,6 +13,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.js"
+    },
+    {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\jquery\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.slim.js"
+    },
+    {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\jquery\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\jquery\\jquery.slim.min.js"
+    },
+    {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\jquery\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\jquery\\jquery.slim.min.map"
+    },
+    {
       "Id": "D:\\.netProject\\EMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

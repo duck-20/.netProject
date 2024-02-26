@@ -36,7 +36,7 @@ namespace EMS.Controllers
         {
             var result = _EmployeeInfo;
             result.saveEmployeeId(model);
-            return RedirectToAction("DisplayData");
+            return View();
         }
 
     }
