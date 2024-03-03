@@ -37,10 +37,6 @@
       "PackagePath": "staticwebassets\\jquery\\jquery.slim.min.map"
     },
     {
-      "Id": "D:\\.netProject\\EMS\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
-    },
-    {
       "Id": "D:\\.netProject\\EMS\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

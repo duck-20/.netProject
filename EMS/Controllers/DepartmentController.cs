@@ -28,6 +28,13 @@ namespace EMS.Controllers
             setUpDepartmentViewModel.DeptList = data;
             return View(setUpDepartmentViewModel);
         }
+        public IActionResult Edit(string deptName)
+        {
+            var data = _DepartmentInfo.SetupDepartmentList();
+            SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
+            setUpDepartmentViewModel = data.Where(x => x.DeptName == deptName).FirstOrDefault();
+            return View(setUpDepartmentViewModel);
+        }
         [HttpPost]
         public IActionResult Create(SetUpDepartmentViewModel model)
         {

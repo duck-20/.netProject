@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZVYBhR9AXnIVQMQhnf+epT1DihX9KUsSO7ixu1jWgv8=",
+  "Hash": "Jq1LSBGXno4mC+JPtwlUKdeoMrukl8w0gL31vkDgRUA=",
   "Source": "EMS",
   "BasePath": "_content/EMS",
   "Mode": "Default",
@@ -205,25 +205,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\jquery\\jquery.slim.min.map"
-    },
-    {
-      "Identity": "D:\\.netProject\\EMS\\wwwroot\\js\\site.js",
-      "SourceId": "EMS",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\.netProject\\EMS\\wwwroot\\",
-      "BasePath": "_content/EMS",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
       "Identity": "D:\\.netProject\\EMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
