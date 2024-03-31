@@ -1,11 +1,16 @@
-﻿using EMS.Services.Interface;
+﻿using EMS.Services.Implementation;
+using EMS.Services.Interface;
 
 namespace EMS.Dependency
 {
-    public class DependencyInjection
+    public static class DependencyInjection
     {
-        public void configurationService(IServiceCollection services)
+        public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
+            services.AddScoped<IEmployeeInfo,EmployeeInfoService>();
+            services.AddScoped<IDepartmentInfo,DepartmentInfoService>();
+            return services;
+
         }
     }
 }
