@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\EMS.bundle.scp.css"
     },
     {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\Logo.png",
+      "PackagePath": "staticwebassets\\Logo.png"
+    },
+    {
       "Id": "D:\\.netProject\\EMS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Jq1LSBGXno4mC+JPtwlUKdeoMrukl8w0gL31vkDgRUA=",
+  "Hash": "90e+K10i+oZelly4Yi67u2wOz1lIWeQbjNfn4PaaLdc=",
   "Source": "EMS",
   "BasePath": "_content/EMS",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\.netProject\\EMS\\wwwroot\\Logo.png",
+      "SourceId": "EMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.netProject\\EMS\\wwwroot\\",
+      "BasePath": "_content/EMS",
+      "RelativePath": "Logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Logo.png"
     }
   ]
 }
