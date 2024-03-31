@@ -1,13 +1,36 @@
+using EMS.ConnectionStrings;
 using EMS.Dependency;
 using EMS.Entities;
 using EMS.Services.Implementation;
 using EMS.Services.Interface;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.RegisterServices();
+builder.Services.AddDbContext<DbConnect>(options =>options.UseSqlServer("name=ConnectionStrings:EMSConnection"));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+   .AddEntityFrameworkStores<DbConnect>()
+   .AddDefaultTokenProviders();
+
+//builder.Services.Configure<CookiePolicyOptions>(options =>
+//{
+//    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+//    options.CheckConsentNeeded = context => true;
+//    options.MinimumSameSitePolicy = SameSiteMode.None;
+//});
+//builder.Services.AddSession(options =>
+//{
+//    options.Cookie.SameSite = SameSiteMode.None;
+//    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+//    options.Cookie.IsEssential = true;
+//});
+///end post define methods
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
