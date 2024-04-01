@@ -110,10 +110,6 @@ D:\.netProject\EMS\obj\Debug\net8.0\EMS.csproj.AssemblyReference.cache
 D:\.netProject\EMS\obj\Debug\net8.0\EMS.csproj.CopyComplete
 D:\.netProject\EMS\bin\Debug\net8.0\Azure.Core.dll
 D:\.netProject\EMS\bin\Debug\net8.0\Azure.Identity.dll
-D:\.netProject\EMS\bin\Debug\net8.0\EntityFramework.SqlServer.dll
-D:\.netProject\EMS\bin\Debug\net8.0\EntityFramework.dll
-D:\.netProject\EMS\bin\Debug\net8.0\IdentityFramework.Core.dll
-D:\.netProject\EMS\bin\Debug\net8.0\IdentityFramework.EF.dll
 D:\.netProject\EMS\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 D:\.netProject\EMS\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\.netProject\EMS\bin\Debug\net8.0\Microsoft.Identity.Client.dll

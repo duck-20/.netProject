@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "90e+K10i+oZelly4Yi67u2wOz1lIWeQbjNfn4PaaLdc=",
+  "Hash": "5SRmh8zZ/5y8wXdrvhawTLz6cBGOaGNp1lyjbX1jgZI=",
   "Source": "EMS",
   "BasePath": "_content/EMS",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\.netProject\\EMS\\wwwroot\\duck.jpg",
+      "SourceId": "EMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.netProject\\EMS\\wwwroot\\",
+      "BasePath": "_content/EMS",
+      "RelativePath": "duck.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\duck.jpg"
     },
     {
       "Identity": "D:\\.netProject\\EMS\\wwwroot\\favicon.ico",
@@ -1307,6 +1326,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Logo.png"
+    },
+    {
+      "Identity": "D:\\.netProject\\EMS\\wwwroot\\profile.png",
+      "SourceId": "EMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.netProject\\EMS\\wwwroot\\",
+      "BasePath": "_content/EMS",
+      "RelativePath": "profile.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\profile.png"
+    },
+    {
+      "Identity": "D:\\.netProject\\EMS\\wwwroot\\Screenshot (1).png",
+      "SourceId": "EMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.netProject\\EMS\\wwwroot\\",
+      "BasePath": "_content/EMS",
+      "RelativePath": "Screenshot (1).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Screenshot (1).png"
     }
   ]
 }

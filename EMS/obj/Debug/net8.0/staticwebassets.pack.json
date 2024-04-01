@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\Logo.png"
     },
     {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\Screenshot (1).png",
+      "PackagePath": "staticwebassets\\Screenshot (1).png"
+    },
+    {
       "Id": "D:\\.netProject\\EMS\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\duck.jpg",
+      "PackagePath": "staticwebassets\\duck.jpg"
     },
     {
       "Id": "D:\\.netProject\\EMS\\wwwroot\\favicon.ico",
@@ -267,6 +275,10 @@
     {
       "Id": "D:\\.netProject\\EMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\.netProject\\EMS\\wwwroot\\profile.png",
+      "PackagePath": "staticwebassets\\profile.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.EMS.Microsoft.AspNetCore.StaticWebAssets.props",

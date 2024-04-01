@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v8.0": {
       "EMS/1.0.0": {
         "dependencies": {
-          "IdentityFramework.EntityFramework": "2.3.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.3",
           "Microsoft.EntityFrameworkCore": "8.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.3",
@@ -52,43 +51,11 @@
           }
         }
       },
-      "EntityFramework/6.2.0": {
-        "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.2.61023.0"
-          },
-          "lib/net45/EntityFramework.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.2.61023.0"
-          }
-        }
-      },
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
-          }
-        }
-      },
-      "IdentityFramework.Core/2.3.1": {
-        "runtime": {
-          "lib/net45/IdentityFramework.Core.dll": {
-            "assemblyVersion": "2.3.1.0",
-            "fileVersion": "2.3.1.0"
-          }
-        }
-      },
-      "IdentityFramework.EntityFramework/2.3.1": {
-        "dependencies": {
-          "EntityFramework": "6.2.0",
-          "IdentityFramework.Core": "2.3.1"
-        },
-        "runtime": {
-          "lib/net45/IdentityFramework.EF.dll": {
-            "assemblyVersion": "2.3.1.0",
-            "fileVersion": "2.3.1.0"
           }
         }
       },
@@ -976,33 +943,12 @@
       "path": "azure.identity/1.10.3",
       "hashPath": "azure.identity.1.10.3.nupkg.sha512"
     },
-    "EntityFramework/6.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
-      "path": "entityframework/6.2.0",
-      "hashPath": "entityframework.6.2.0.nupkg.sha512"
-    },
     "Humanizer.Core/2.14.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
-    },
-    "IdentityFramework.Core/2.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Bk0QDfKpiAyeM/DH6f63K8HOY3hb1NcNb4nRswVDAkf/FPOiyTgQ/D4ZA2V7701/gpxYhYSIgNTaMkYKgaxnjA==",
-      "path": "identityframework.core/2.3.1",
-      "hashPath": "identityframework.core.2.3.1.nupkg.sha512"
-    },
-    "IdentityFramework.EntityFramework/2.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-KaDQWtFc89+2vTjN3gx7aufyIGVZy5UbGGIyeGGQ1T949D9NaRFsqU7zxX/MnkVoW018dM+8gp7V244CCX5f3A==",
-      "path": "identityframework.entityframework/2.3.1",
-      "hashPath": "identityframework.entityframework.2.3.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.3": {
       "type": "package",

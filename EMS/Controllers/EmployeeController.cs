@@ -20,6 +20,14 @@ namespace EMS.Controllers
             return View();
         }
         [HttpGet]
+        public IActionResult Details(string phoneNumber)
+        {
+            var data=_EmployeeInfo.getEmployeeList();
+            EmployeeInfoViewModel viewModel = new EmployeeInfoViewModel();
+            viewModel = data.Where(info => info.PhoneNumber == phoneNumber).FirstOrDefault();
+            return View(viewModel);
+        }
+        [HttpGet]
         public IActionResult DisplayData()
         {
             EmployeeInfoViewModel employeeInfoViewModel = new EmployeeInfoViewModel();

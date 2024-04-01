@@ -14,7 +14,7 @@ namespace EMS.ConnectionStrings
         public DbConnect(DbContextOptions<DbConnect> options): base(options)
         { }
         public DbSet<EmployeeInfo> Employees { get; set; }
-        public DbSet<SetUpDepartmentViewModel> SetupDepartment { get; set; }
+        public DbSet<DepartmentInfo> SetupDepartment { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

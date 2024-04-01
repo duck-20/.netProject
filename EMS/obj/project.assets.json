@@ -46,25 +46,6 @@
           }
         }
       },
-      "EntityFramework/6.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/EntityFramework.SqlServer.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/EntityFramework.dll": {
-            "related": ".SqlServer.xml;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/EntityFramework.dll": {
-            "related": ".SqlServer.xml;.xml"
-          }
-        }
-      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -76,28 +57,6 @@
           "lib/net6.0/Humanizer.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "IdentityFramework.Core/2.3.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/IdentityFramework.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/IdentityFramework.Core.dll": {}
-        }
-      },
-      "IdentityFramework.EntityFramework/2.3.1": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "6.2.0",
-          "IdentityFramework.Core": "2.3.1"
-        },
-        "compile": {
-          "lib/net45/IdentityFramework.EF.dll": {}
-        },
-        "runtime": {
-          "lib/net45/IdentityFramework.EF.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/8.0.3": {
@@ -1671,36 +1630,6 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-    "EntityFramework/6.2.0": {
-      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
-      "type": "package",
-      "path": "entityframework/6.2.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/net40/App.config.transform",
-        "content/net40/Web.config.transform",
-        "entityframework.6.2.0.nupkg.sha512",
-        "entityframework.nuspec",
-        "lib/net40/EntityFramework.SqlServer.dll",
-        "lib/net40/EntityFramework.SqlServer.xml",
-        "lib/net40/EntityFramework.dll",
-        "lib/net40/EntityFramework.xml",
-        "lib/net45/EntityFramework.SqlServer.dll",
-        "lib/net45/EntityFramework.SqlServer.xml",
-        "lib/net45/EntityFramework.dll",
-        "lib/net45/EntityFramework.xml",
-        "tools/EntityFramework.PowerShell.Utility.dll",
-        "tools/EntityFramework.PowerShell.dll",
-        "tools/EntityFramework.psd1",
-        "tools/EntityFramework.psm1",
-        "tools/about_EntityFramework.help.txt",
-        "tools/init.ps1",
-        "tools/install.ps1",
-        "tools/migrate.exe"
-      ]
-    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -1717,30 +1646,6 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
-      ]
-    },
-    "IdentityFramework.Core/2.3.1": {
-      "sha512": "Bk0QDfKpiAyeM/DH6f63K8HOY3hb1NcNb4nRswVDAkf/FPOiyTgQ/D4ZA2V7701/gpxYhYSIgNTaMkYKgaxnjA==",
-      "type": "package",
-      "path": "identityframework.core/2.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "identityframework.core.2.3.1.nupkg.sha512",
-        "identityframework.core.nuspec",
-        "lib/net45/IdentityFramework.Core.dll"
-      ]
-    },
-    "IdentityFramework.EntityFramework/2.3.1": {
-      "sha512": "KaDQWtFc89+2vTjN3gx7aufyIGVZy5UbGGIyeGGQ1T949D9NaRFsqU7zxX/MnkVoW018dM+8gp7V244CCX5f3A==",
-      "type": "package",
-      "path": "identityframework.entityframework/2.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "identityframework.entityframework.2.3.1.nupkg.sha512",
-        "identityframework.entityframework.nuspec",
-        "lib/net45/IdentityFramework.EF.dll"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.3": {
@@ -4368,7 +4273,6 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "IdentityFramework.EntityFramework >= 2.3.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.3",
       "Microsoft.EntityFrameworkCore >= 8.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.3",
@@ -4420,10 +4324,6 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "IdentityFramework.EntityFramework": {
-            "target": "Package",
-            "version": "[2.3.1, )"
-          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.3, )"
@@ -4465,37 +4365,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'EntityFramework 6.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "EntityFramework",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'IdentityFramework.Core 2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "IdentityFramework.Core",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'IdentityFramework.EntityFramework 2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "IdentityFramework.EntityFramework",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

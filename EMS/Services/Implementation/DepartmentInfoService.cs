@@ -1,17 +1,35 @@
-﻿using EMS.Models;
+﻿using EMS.ConnectionStrings;
+using EMS.Entities;
+using EMS.Models;
 using EMS.Services.Interface;
 
 namespace EMS.Services.Implementation
 {
     public class DepartmentInfoService:IDepartmentInfo
     {
+        private readonly DbConnect _connect;
+        public DepartmentInfoService(DbConnect connect)
+        {
+            _connect = connect;
+        }
         public List<SetUpDepartmentViewModel> SetupDepartmentList()
         {
+            var data=_connect.SetupDepartment.ToList();
             SetUpDepartmentViewModel viewModel = new SetUpDepartmentViewModel();
-            var departmentList = new List<SetUpDepartmentViewModel>();
-            viewModel.DeptName = "BCA";
-            departmentList.Add(viewModel);
+            var departmentList= new List<SetUpDepartmentViewModel>();
+            if(data.Count > 0 )
+            {
+                foreach( var item in data )
+                {
+                    departmentList.Add(new SetUpDepartmentViewModel()
+                    {
+                        DeptName=item.DepartmentName,
+                    });
+                }
+            }
             return departmentList;
+            
+
             
 
         }
@@ -21,8 +39,10 @@ namespace EMS.Services.Implementation
         }
         public void saveDepartmentId(SetUpDepartmentViewModel model)
         {
-            SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
-            setUpDepartmentViewModel.DeptName = model.DeptName;
+            DepartmentInfo departmentInfo = new DepartmentInfo();
+            departmentInfo.DepartmentName = model.DeptName;
+            _connect.Add(departmentInfo);
+            _connect.SaveChanges();
 
         }
         public void deleteDepartmentId(int departmentId)

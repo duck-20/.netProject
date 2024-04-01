@@ -1,24 +1,33 @@
-﻿using EMS.Models;
+﻿using EMS.ConnectionStrings;
+using EMS.Entities;
+using EMS.Models;
 using EMS.Services.Interface;
 
 namespace EMS.Services.Implementation
 {
     public class EmployeeInfoService : IEmployeeInfo
     {
+        private readonly DbConnect _connect;
+        public EmployeeInfoService(DbConnect connect)
+        {
+            _connect = connect;
+        }
         public int getEmployeeById(int employeeId)
         {
             return 1;
         }
         public void saveEmployeeId(EmployeeInfoViewModel model)
         {
-            EmployeeInfoViewModel employeeInfoViewModel = new EmployeeInfoViewModel();
-            employeeInfoViewModel.FirstName = model.FirstName;
-            employeeInfoViewModel.LastName = model.LastName;    
-            employeeInfoViewModel.Email = model.Email;
-            employeeInfoViewModel.Address = model.Address;
-            employeeInfoViewModel.PhoneNumber = model.PhoneNumber;
-            employeeInfoViewModel.Gender = model.Gender;
-            employeeInfoViewModel.ProfilePath = model.ProfilePath;
+            EmployeeInfo employeeInfo = new EmployeeInfo();
+            employeeInfo.FirstName = model.FirstName;
+            employeeInfo.LastName = model.LastName;    
+            employeeInfo.Email = model.Email;
+            employeeInfo.Address = model.Address;
+            employeeInfo.PhoneNumber = model.PhoneNumber;
+            employeeInfo.Gender = model.Gender;
+            employeeInfo.ProfilePath = model.ProfilePath;
+            _connect.Add(employeeInfo);
+            _connect.SaveChanges();
 
 
         }
@@ -29,24 +38,25 @@ namespace EMS.Services.Implementation
 
         public List<EmployeeInfoViewModel> getEmployeeList()
         {
-            EmployeeInfoViewModel model1 = new EmployeeInfoViewModel();
-            EmployeeInfoViewModel model2 = new EmployeeInfoViewModel();
-            var EmployeeList=new List<EmployeeInfoViewModel>();
-            model1.FirstName = "Ayush";
-            model1.LastName = "Pakhrin";
-            model1.Email = "Pakhrinayush56@gmail.com";
-            model1.Address = "Boudha";
-            model1.PhoneNumber = "9813493440";
-            model1.Gender = 1;
-            EmployeeList.Add(model1);
-            model2.FirstName = "Robina";
-            model2.LastName = "Shahi";
-            model2.Email = "shahirobina45@gmail.com";
-            model2.Address = "Teku";
-            model2.PhoneNumber = "9804774785";
-            model2.Gender = 2;
-            EmployeeList.Add(model2);
-            return EmployeeList;
+            var data=_connect.Employees.ToList();
+            var employeeList= new List<EmployeeInfoViewModel>();    
+            if(data.Count > 0)
+            {
+                foreach(var employee in data)
+                {
+                    employeeList.Add(new EmployeeInfoViewModel()
+                    {
+                        FirstName = employee.FirstName,
+                        LastName = employee.LastName,
+                        Email = employee.Email,
+                        Address = employee.Address,
+                        PhoneNumber = employee.PhoneNumber,
+                        Gender = employee.Gender,
+                        ProfilePath = employee.ProfilePath
+                    });
+                }
+            }
+            return employeeList;
         }
     }
 }
