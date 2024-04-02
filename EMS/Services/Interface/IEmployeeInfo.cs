@@ -7,6 +7,6 @@ namespace EMS.Services.Interface
         List<EmployeeInfoViewModel> getEmployeeList();
         int getEmployeeById(int employeeId);
         void saveEmployeeId(EmployeeInfoViewModel model);
-        void deleteEmployeeId(int employeeId);
+        void deleteEmployeeId(string phoneNumber);
     }
 }

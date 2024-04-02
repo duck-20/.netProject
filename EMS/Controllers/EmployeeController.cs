@@ -19,6 +19,10 @@ namespace EMS.Controllers
         {
             return View();
         }
+        public IActionResult Delete()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult Details(string phoneNumber)
         {
@@ -35,6 +39,7 @@ namespace EMS.Controllers
             employeeInfoViewModel.Employees = data;
             return View(employeeInfoViewModel);
         }
+        [HttpGet]   
         public IActionResult Edit(string phoneNumber)
         {
             var data = _EmployeeInfo.getEmployeeList();
@@ -42,6 +47,13 @@ namespace EMS.Controllers
             model = data.Where(info => info.PhoneNumber == phoneNumber).FirstOrDefault();
             return View(model);
 
+        }
+        [HttpGet]
+        public IActionResult Delete(string phoneNumber) 
+        {
+            var data = _EmployeeInfo;
+            data.deleteEmployeeId(phoneNumber);
+            return RedirectToAction("DisplayData");
         }
         [HttpPost]
         public IActionResult Create(EmployeeInfoViewModel model)

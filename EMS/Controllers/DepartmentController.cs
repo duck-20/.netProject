@@ -29,6 +29,10 @@ namespace EMS.Controllers
         {
             return View();
         }
+        public IActionResult Delete()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult Details(string deptName)
         {
@@ -44,6 +48,13 @@ namespace EMS.Controllers
             SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
             setUpDepartmentViewModel.DeptList = data;
             return View(setUpDepartmentViewModel);
+        }
+        [HttpGet]
+        public IActionResult Delete(string departmentName)
+        {
+            var data= _DepartmentInfo;
+            data.deleteDepartmentId(departmentName);
+            return RedirectToAction("DisplayData");
         }
         public IActionResult Edit(string deptName)
         {

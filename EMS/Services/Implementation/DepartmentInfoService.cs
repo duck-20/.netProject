@@ -35,6 +35,7 @@ namespace EMS.Services.Implementation
         }
         public int getDepartmentById(int departmentId)
         {
+
             return 1;
         }
         public void saveDepartmentId(SetUpDepartmentViewModel model)
@@ -45,9 +46,11 @@ namespace EMS.Services.Implementation
             _connect.SaveChanges();
 
         }
-        public void deleteDepartmentId(int departmentId)
+        public void deleteDepartmentId(string departmentName)
         {
-
+            var data=_connect.SetupDepartment.Where(x=>x.DepartmentName==departmentName).FirstOrDefault();
+            _connect.Remove(data);
+            _connect.SaveChanges();
         }
     }
 }

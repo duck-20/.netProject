@@ -7,6 +7,6 @@ namespace EMS.Services.Interface
         List<SetUpDepartmentViewModel> SetupDepartmentList();
         int getDepartmentById(int departmentId);
         void saveDepartmentId(SetUpDepartmentViewModel model);
-        void deleteDepartmentId(int departmentId);
+        void deleteDepartmentId(string departmentName);
     }
 }

@@ -2,6 +2,7 @@
 using EMS.Entities;
 using EMS.Models;
 using EMS.Services.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace EMS.Services.Implementation
 {
@@ -31,9 +32,11 @@ namespace EMS.Services.Implementation
 
 
         }
-        public void deleteEmployeeId(int employeeId)
+        public void deleteEmployeeId(string phoneNumber)
         {
-
+            var data=_connect.Employees.Where(x=>x.PhoneNumber==phoneNumber).FirstOrDefault();
+            _connect.Remove(data);
+            _connect.SaveChanges();
         }
 
         public List<EmployeeInfoViewModel> getEmployeeList()
