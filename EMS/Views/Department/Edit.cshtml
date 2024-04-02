@@ -7,12 +7,14 @@
 		<div class="card">
 			<h2 class="card-header py-4 bg-black text-light">Edit Details</h2>
 			<div class="card-body">
-				<form class="" asp-controller="Department" asp-action="Edit">
+				<form asp-controller="Department" asp-action="Edit">
 					<div class="row">
 						<div class="col-sm-6">
 							<label for="DeptName" class="my-2">Department Name</label>
-							<input placeholder="Enter Department Name" asp-for="DeptName" class="form-control" autocomplete="off" />
-
+							<input placeholder="Enter Department Name" asp-for="DepartmentName" class="form-control" autocomplete="off" />
+						</div>
+						<div class="col-sm-6">
+							<input asp-for="DepartmentId" class="d-none" />
 						</div>
 					</div>
 					<input type="submit" value="Update" class="btn btn-dark mt-3" />

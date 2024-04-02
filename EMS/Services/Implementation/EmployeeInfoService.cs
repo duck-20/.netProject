@@ -13,11 +13,11 @@ namespace EMS.Services.Implementation
         {
             _connect = connect;
         }
-        public int getEmployeeById(int employeeId)
+        public int GetEmployeeById(int employeeId)
         {
             return 1;
         }
-        public void saveEmployeeId(EmployeeInfoViewModel model)
+        public void SaveEmployeeId(EmployeeInfoViewModel model)
         {
             EmployeeInfo employeeInfo = new EmployeeInfo();
             employeeInfo.FirstName = model.FirstName;
@@ -27,19 +27,25 @@ namespace EMS.Services.Implementation
             employeeInfo.PhoneNumber = model.PhoneNumber;
             employeeInfo.Gender = model.Gender;
             employeeInfo.ProfilePath = model.ProfilePath;
+            employeeInfo.CreatedBy = 1;
+            employeeInfo.CreatedDate = DateTime.Now;
             _connect.Add(employeeInfo);
             _connect.SaveChanges();
 
 
         }
-        public void deleteEmployeeId(string phoneNumber)
+        public void DeleteEmployeeId(int ID)
         {
-            var data=_connect.Employees.Where(x=>x.PhoneNumber==phoneNumber).FirstOrDefault();
-            _connect.Remove(data);
+            var data=_connect.Employees.FirstOrDefault(x=>x.Id==ID);
+            if(data != null)
+            {
+                data.DeletedBy = 1;
+                data.DeletedDate= DateTime.Now;
+            }
             _connect.SaveChanges();
         }
 
-        public List<EmployeeInfoViewModel> getEmployeeList()
+        public List<EmployeeInfoViewModel> GetEmployeeList()
         {
             var data=_connect.Employees.ToList();
             var employeeList= new List<EmployeeInfoViewModel>();    
@@ -49,17 +55,39 @@ namespace EMS.Services.Implementation
                 {
                     employeeList.Add(new EmployeeInfoViewModel()
                     {
+                        Id = employee.Id,
                         FirstName = employee.FirstName,
                         LastName = employee.LastName,
                         Email = employee.Email,
                         Address = employee.Address,
                         PhoneNumber = employee.PhoneNumber,
                         Gender = employee.Gender,
-                        ProfilePath = employee.ProfilePath
+                        ProfilePath = employee.ProfilePath,
+                        DeletedBy= employee.DeletedBy,
+                        UpdatedBy= employee.UpdatedBy,
+                        CreatedBy= employee.CreatedBy,
                     });
                 }
             }
             return employeeList;
         }
-    }
+        public void UpdateEmployeeId(EmployeeInfoViewModel model)
+        {
+            var data=_connect.Employees.FirstOrDefault(x=>x.Id == model.Id);
+            if(data != null)
+            {
+				data.FirstName = model.FirstName;
+				data.LastName = model.LastName;
+				data.Email = model.Email;
+				data.Address = model.Address;
+				data.PhoneNumber = model.PhoneNumber;
+				data.Gender = model.Gender;
+				data.ProfilePath = model.ProfilePath;
+				data.UpdatedDate = model.UpdatedDate;
+				data.UpdatedBy = 1;
+			}
+
+            _connect.SaveChanges();
+        }
+	}
 }

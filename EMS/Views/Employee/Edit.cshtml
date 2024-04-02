@@ -7,9 +7,9 @@
 		<div class="card">
 			<h2 class="bg-black text-white card-header py-4">Edit Details</h2>
 			<div class="card-body">
-				<form class="border-success" asp-controller="Employee" asp-action="">
+				<form class="border-success" asp-controller="Employee" asp-action="Edit">
 
-
+					<input asp-for="Id" class="d-none" />
 					<div class="row mt-2">
 						<div class="col-sm-6">
 							<label for="FirstName" class="my-1">

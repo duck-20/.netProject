@@ -8,5 +8,6 @@ namespace EMS.Services.Interface
         int getDepartmentById(int departmentId);
         void saveDepartmentId(SetUpDepartmentViewModel model);
         void deleteDepartmentId(string departmentName);
+        void UpdateDepartmentId(SetUpDepartmentViewModel model);
     }
 }

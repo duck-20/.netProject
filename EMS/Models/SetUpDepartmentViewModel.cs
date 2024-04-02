@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EMS.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace EMS.Models
 {
-    public class SetUpDepartmentViewModel
+    public class SetUpDepartmentViewModel:BaseEntities
     {
-        public int? DeptId {  get; set; }
+        public int? DepartmentId { get; set; }
         [Required]
-        public string DeptName { get; set; } = string.Empty;
+        public string DepartmentName { get; set; } = string.Empty;
         public List<SetUpDepartmentViewModel> DeptList { get; set; }
         public SetUpDepartmentViewModel() {
         DeptList = new List<SetUpDepartmentViewModel>();

@@ -10,6 +10,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">SNo.</th>
+                    <th scope="col">Department ID</th>
                     <th scope="col">Department Name</th>
                     <th scope="col">Actions</th>
 
@@ -21,9 +22,10 @@
 
                     <tr>
                         <th scope="row">@(count = count + 1)</th>
-                        <td>@data.DeptName</td>
+                        <td scope="row">@data.DepartmentId</td>
+                        <td>@data.DepartmentName</td>
                         <td>
-                            <a href="/Department/Details?deptName=@data.DeptName" class="text-primary">
+                            <a href="/Department/Details?deptName=@data.DepartmentName" class="text-primary">
                                View Details
                             </a>
                         </td>

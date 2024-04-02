@@ -23,15 +23,13 @@ namespace EMS.Services.Implementation
                 {
                     departmentList.Add(new SetUpDepartmentViewModel()
                     {
-                        DeptName=item.DepartmentName,
+                        DepartmentId = item.DepartmentId,
+                        DepartmentName=item.DepartmentName,
+                        DeletedBy=item.DeletedBy,
                     });
                 }
             }
             return departmentList;
-            
-
-            
-
         }
         public int getDepartmentById(int departmentId)
         {
@@ -41,16 +39,34 @@ namespace EMS.Services.Implementation
         public void saveDepartmentId(SetUpDepartmentViewModel model)
         {
             DepartmentInfo departmentInfo = new DepartmentInfo();
-            departmentInfo.DepartmentName = model.DeptName;
+            departmentInfo.DepartmentName = model.DepartmentName;
+            departmentInfo.CreatedBy = 1;
+            departmentInfo.CreatedDate= DateTime.Now;
             _connect.Add(departmentInfo);
             _connect.SaveChanges();
 
         }
         public void deleteDepartmentId(string departmentName)
         {
-            var data=_connect.SetupDepartment.Where(x=>x.DepartmentName==departmentName).FirstOrDefault();
-            _connect.Remove(data);
+            var data = _connect.SetupDepartment.FirstOrDefault(x => x.DepartmentName== departmentName);
+            if( data != null )
+            {
+                data.DeletedBy=1;
+                data.DeletedDate= DateTime.Now;
+            }
             _connect.SaveChanges();
         }
+        public void UpdateDepartmentId(SetUpDepartmentViewModel model)
+        {
+            var data= _connect.SetupDepartment.FirstOrDefault(x=>x.DepartmentId== model.DepartmentId);
+            if( data != null )
+            {
+                data.DepartmentName= model.DepartmentName;
+                data.UpdatedBy=1;
+                data.UpdatedDate= DateTime.Now;
+            }
+            _connect.SaveChanges();
+        }
+        
     }
 }

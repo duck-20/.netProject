@@ -4,9 +4,10 @@ namespace EMS.Services.Interface
 {
     public interface IEmployeeInfo
     {
-        List<EmployeeInfoViewModel> getEmployeeList();
-        int getEmployeeById(int employeeId);
-        void saveEmployeeId(EmployeeInfoViewModel model);
-        void deleteEmployeeId(string phoneNumber);
+        List<EmployeeInfoViewModel> GetEmployeeList();
+        int GetEmployeeById(int employeeId);
+        void SaveEmployeeId(EmployeeInfoViewModel model);
+        void DeleteEmployeeId(int ID);
+        void UpdateEmployeeId(EmployeeInfoViewModel model);
     }
 }

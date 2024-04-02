@@ -24,42 +24,49 @@ namespace EMS.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Details(string phoneNumber)
+        public IActionResult Details(int ID)
         {
-            var data=_EmployeeInfo.getEmployeeList();
+            var data=_EmployeeInfo.GetEmployeeList();
             EmployeeInfoViewModel viewModel = new EmployeeInfoViewModel();
-            viewModel = data.Where(info => info.PhoneNumber == phoneNumber).FirstOrDefault();
+            viewModel = data.FirstOrDefault(info => info.Id==ID);
             return View(viewModel);
         }
         [HttpGet]
         public IActionResult DisplayData()
         {
             EmployeeInfoViewModel employeeInfoViewModel = new EmployeeInfoViewModel();
-            var data=_EmployeeInfo.getEmployeeList();
-            employeeInfoViewModel.Employees = data;
+            var data=_EmployeeInfo.GetEmployeeList();
+            employeeInfoViewModel.Employees = data.Where(x=>x.DeletedBy==null).ToList();
             return View(employeeInfoViewModel);
         }
         [HttpGet]   
-        public IActionResult Edit(string phoneNumber)
+        public IActionResult Edit(int ID)
         {
-            var data = _EmployeeInfo.getEmployeeList();
+            var data = _EmployeeInfo.GetEmployeeList();
             EmployeeInfoViewModel model = new EmployeeInfoViewModel();
-            model = data.Where(info => info.PhoneNumber == phoneNumber).FirstOrDefault();
+            model = data.Where(info => info.Id == ID).FirstOrDefault();
             return View(model);
 
         }
-        [HttpGet]
-        public IActionResult Delete(string phoneNumber) 
+        [HttpPost]
+        public IActionResult Edit(EmployeeInfoViewModel model) 
         {
             var data = _EmployeeInfo;
-            data.deleteEmployeeId(phoneNumber);
+            data.UpdateEmployeeId(model);
+            return RedirectToAction("DisplayData");
+        }
+        [HttpGet]
+        public IActionResult Delete(int ID) 
+        {
+            var data = _EmployeeInfo;
+            data.DeleteEmployeeId(ID);
             return RedirectToAction("DisplayData");
         }
         [HttpPost]
         public IActionResult Create(EmployeeInfoViewModel model)
         {
             var result = _EmployeeInfo;
-            result.saveEmployeeId(model);
+            result.SaveEmployeeId(model);
             return View();
         }
 

@@ -10,10 +10,8 @@ namespace EMS.Controllers
     public class DepartmentController : Controller
     {
         public readonly IDepartmentInfo _DepartmentInfo;
-        public readonly DbConnect _connect;
-        public DepartmentController(DbConnect dbConnect, IDepartmentInfo departmentInfo)
+        public DepartmentController( IDepartmentInfo departmentInfo)
         {
-            _connect = dbConnect;
             _DepartmentInfo = departmentInfo;
         }
 
@@ -25,20 +23,19 @@ namespace EMS.Controllers
         {
             return View();
         }
-        public IActionResult Details()
+        [HttpGet]
+        public IActionResult Delete(string departmentName)
         {
-            return View();
-        }
-        public IActionResult Delete()
-        {
-            return View();
+            var data = _DepartmentInfo;
+            data.deleteDepartmentId(departmentName);
+            return RedirectToAction("DisplayData");
         }
         [HttpGet]
         public IActionResult Details(string deptName)
         {
             var data = _DepartmentInfo.SetupDepartmentList();
             SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
-            setUpDepartmentViewModel = data.Where(x => x.DeptName == deptName).FirstOrDefault();
+            setUpDepartmentViewModel = data.Where(x => x.DepartmentName == deptName).FirstOrDefault();
             return View(setUpDepartmentViewModel);
         }
         [HttpGet]
@@ -46,22 +43,23 @@ namespace EMS.Controllers
         {
             var data = _DepartmentInfo.SetupDepartmentList();
             SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
-            setUpDepartmentViewModel.DeptList = data;
+            setUpDepartmentViewModel.DeptList=data.Where(x=>x.DeletedBy==null).ToList();
             return View(setUpDepartmentViewModel);
         }
         [HttpGet]
-        public IActionResult Delete(string departmentName)
-        {
-            var data= _DepartmentInfo;
-            data.deleteDepartmentId(departmentName);
-            return RedirectToAction("DisplayData");
-        }
         public IActionResult Edit(string deptName)
         {
             var data = _DepartmentInfo.SetupDepartmentList();
             SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
-            setUpDepartmentViewModel = data.Where(x => x.DeptName == deptName).FirstOrDefault();
+            setUpDepartmentViewModel = data.Where(x => x.DepartmentName == deptName).FirstOrDefault();
             return View(setUpDepartmentViewModel);
+        }
+        [HttpPost]
+        public IActionResult Edit(SetUpDepartmentViewModel model)
+        {
+            var result = _DepartmentInfo;
+            result.UpdateDepartmentId(model);
+            return RedirectToAction("DisplayData");
         }
         [HttpPost]
         public IActionResult Create(SetUpDepartmentViewModel model)
@@ -69,12 +67,6 @@ namespace EMS.Controllers
             var result = _DepartmentInfo;
             result.saveDepartmentId(model);
             return View();
-        }
-        [HttpPost]
-        public IActionResult Edit(SetUpDepartmentViewModel model)
-        {
-            return RedirectToAction("DisplayData");
-
         }
     }
 }
