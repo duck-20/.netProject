@@ -1,0 +1,13 @@
+﻿@{
+	ViewData["Title"] = "Register";
+}
+<div class="text-center container card card-body mt-5 w-50">
+		<h2 class="text-center text-muted card-header">Sign Up</h2>
+		<form asp-controller="Auth" asp-action="Register">
+			<input class="form-control px-2 my-3" placeholder="Enter your Username" />
+			<input class="form-control px-2 my-3" placeholder="Enter your Email" />
+			<input class="form-control px-2 my-3" placeholder="Enter your Password" />
+			<input class="form-control px-2 my-3" placeholder="Confirm Your Password" />
+			<input class="btn btn-primary px-4" type="submit" value="Create " />
+		</form>
+</div>
