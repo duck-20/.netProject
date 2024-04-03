@@ -24,28 +24,24 @@ namespace EMS.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Details(int ID)
+        public IActionResult Details(int Id)
         {
-            var data=_EmployeeInfo.GetEmployeeList();
-            EmployeeInfoViewModel viewModel = new EmployeeInfoViewModel();
-            viewModel = data.FirstOrDefault(info => info.Id==ID);
-            return View(viewModel);
+            var data=_EmployeeInfo.GetEmployeeById(Id);
+            return View(data);
         }
         [HttpGet]
         public IActionResult DisplayData()
         {
             EmployeeInfoViewModel employeeInfoViewModel = new EmployeeInfoViewModel();
             var data=_EmployeeInfo.GetEmployeeList();
-            employeeInfoViewModel.Employees = data.Where(x=>x.DeletedBy==null).ToList();
+            employeeInfoViewModel.Employees = data.Where(x=>x.DeletedDate==null).ToList();
             return View(employeeInfoViewModel);
         }
         [HttpGet]   
-        public IActionResult Edit(int ID)
+        public IActionResult Edit(int Id)
         {
-            var data = _EmployeeInfo.GetEmployeeList();
-            EmployeeInfoViewModel model = new EmployeeInfoViewModel();
-            model = data.Where(info => info.Id == ID).FirstOrDefault();
-            return View(model);
+            var data=_EmployeeInfo.GetEmployeeById(Id);
+            return View(data);
 
         }
         [HttpPost]
@@ -56,10 +52,10 @@ namespace EMS.Controllers
             return RedirectToAction("DisplayData");
         }
         [HttpGet]
-        public IActionResult Delete(int ID) 
+        public IActionResult Delete(int Id) 
         {
             var data = _EmployeeInfo;
-            data.DeleteEmployeeId(ID);
+            data.DeleteEmployeeId(Id);
             return RedirectToAction("DisplayData");
         }
         [HttpPost]

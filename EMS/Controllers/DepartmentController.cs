@@ -24,35 +24,31 @@ namespace EMS.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Delete(string departmentName)
+        public IActionResult Delete(int departmentId)
         {
             var data = _DepartmentInfo;
-            data.deleteDepartmentId(departmentName);
+            data.deleteDepartmentId(departmentId);
             return RedirectToAction("DisplayData");
         }
         [HttpGet]
-        public IActionResult Details(string deptName)
+        public IActionResult Details(int departmentId)
         {
-            var data = _DepartmentInfo.SetupDepartmentList();
-            SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
-            setUpDepartmentViewModel = data.Where(x => x.DepartmentName == deptName).FirstOrDefault();
-            return View(setUpDepartmentViewModel);
+            var data = _DepartmentInfo.getDepartmentById(departmentId);
+            return View(data);
         }
         [HttpGet]
         public IActionResult DisplayData()
         {
             var data = _DepartmentInfo.SetupDepartmentList();
             SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
-            setUpDepartmentViewModel.DeptList=data.Where(x=>x.DeletedBy==null).ToList();
+            setUpDepartmentViewModel.DeptList=data.Where(x=>x.DeletedDate==null).ToList();
             return View(setUpDepartmentViewModel);
         }
         [HttpGet]
-        public IActionResult Edit(string deptName)
+        public IActionResult Edit(int departmentId)
         {
-            var data = _DepartmentInfo.SetupDepartmentList();
-            SetUpDepartmentViewModel setUpDepartmentViewModel = new SetUpDepartmentViewModel();
-            setUpDepartmentViewModel = data.Where(x => x.DepartmentName == deptName).FirstOrDefault();
-            return View(setUpDepartmentViewModel);
+            var data = _DepartmentInfo.getDepartmentById(departmentId);
+            return View(data);
         }
         [HttpPost]
         public IActionResult Edit(SetUpDepartmentViewModel model)

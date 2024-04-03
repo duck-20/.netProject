@@ -5,9 +5,9 @@ namespace EMS.Services.Interface
     public interface IDepartmentInfo
     {
         List<SetUpDepartmentViewModel> SetupDepartmentList();
-        int getDepartmentById(int departmentId);
+        SetUpDepartmentViewModel getDepartmentById(int departmentId);
         void saveDepartmentId(SetUpDepartmentViewModel model);
-        void deleteDepartmentId(string departmentName);
+        void deleteDepartmentId(int departmentId);
         void UpdateDepartmentId(SetUpDepartmentViewModel model);
     }
 }

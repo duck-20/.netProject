@@ -13,9 +13,20 @@ namespace EMS.Services.Implementation
         {
             _connect = connect;
         }
-        public int GetEmployeeById(int employeeId)
+        public EmployeeInfoViewModel GetEmployeeById(int employeeId)
         {
-            return 1;
+            var data=_connect.Employees.First(x=>x.Id == employeeId);
+            EmployeeInfoViewModel employeeInfo = new EmployeeInfoViewModel();
+            employeeInfo.Id = data.Id;
+            employeeInfo.FirstName = data.FirstName;
+            employeeInfo.LastName = data.LastName;
+            employeeInfo.Email = data.Email;
+            employeeInfo.Address = data.Address;
+            employeeInfo.PhoneNumber = data.PhoneNumber;
+            employeeInfo.Gender = data.Gender;
+            employeeInfo.ProfilePath = data.ProfilePath;
+            return employeeInfo;
+
         }
         public void SaveEmployeeId(EmployeeInfoViewModel model)
         {
@@ -66,6 +77,9 @@ namespace EMS.Services.Implementation
                         DeletedBy= employee.DeletedBy,
                         UpdatedBy= employee.UpdatedBy,
                         CreatedBy= employee.CreatedBy,
+                        DeletedDate= employee.DeletedDate,
+                        UpdatedDate= employee.UpdatedDate,
+                        CreatedDate= employee.CreatedDate,
                     });
                 }
             }
@@ -86,7 +100,7 @@ namespace EMS.Services.Implementation
 				data.UpdatedDate = model.UpdatedDate;
 				data.UpdatedBy = 1;
 			}
-
+            _connect.Update(data);
             _connect.SaveChanges();
         }
 	}

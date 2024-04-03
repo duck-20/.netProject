@@ -26,15 +26,24 @@ namespace EMS.Services.Implementation
                         DepartmentId = item.DepartmentId,
                         DepartmentName=item.DepartmentName,
                         DeletedBy=item.DeletedBy,
+                        DeletedDate=item.DeletedDate,
+                        CreatedDate=item.CreatedDate,
+                        CreatedBy=item.CreatedBy,
+                        UpdatedDate=item.UpdatedDate,
+                        UpdatedBy=item.UpdatedBy,
                     });
                 }
             }
             return departmentList;
         }
-        public int getDepartmentById(int departmentId)
+        public SetUpDepartmentViewModel getDepartmentById(int departmentId)
         {
-
-            return 1;
+            var data=_connect.SetupDepartment.First(x=>x.DepartmentId == departmentId);
+            SetUpDepartmentViewModel result = new SetUpDepartmentViewModel();
+            result.DepartmentId = data.DepartmentId;
+            result.DepartmentName = data.DepartmentName;
+            return result;
+            
         }
         public void saveDepartmentId(SetUpDepartmentViewModel model)
         {
@@ -46,9 +55,9 @@ namespace EMS.Services.Implementation
             _connect.SaveChanges();
 
         }
-        public void deleteDepartmentId(string departmentName)
+        public void deleteDepartmentId(int departmentID)
         {
-            var data = _connect.SetupDepartment.FirstOrDefault(x => x.DepartmentName== departmentName);
+            var data = _connect.SetupDepartment.FirstOrDefault(x => x.DepartmentId== departmentID);
             if( data != null )
             {
                 data.DeletedBy=1;
@@ -65,6 +74,7 @@ namespace EMS.Services.Implementation
                 data.UpdatedBy=1;
                 data.UpdatedDate= DateTime.Now;
             }
+            _connect.Update(data);
             _connect.SaveChanges();
         }
         
