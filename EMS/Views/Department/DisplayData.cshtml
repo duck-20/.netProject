@@ -3,35 +3,47 @@
     ViewData["Title"] = "Department List";
     int count = 0;
 }
-<body class="bg-light">
-    <div class="mt-5 card card-body">
-        <h1 class="bg-black text-light card-header py-4">Department Data</h1>
-        <table class="table card-body table-responsive">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">SNo.</th>
-                    <th scope="col">Department ID</th>
-                    <th scope="col">Department Name</th>
-                    <th scope="col">Actions</th>
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var data in Model.DeptList)
-                {
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Department Table</h1>
+    <p class="mb-4">
+        List of our Department with their Details.
+    </p>
 
-                    <tr>
-                        <th scope="row">@(count = count + 1)</th>
-                        <td scope="row">@data.DepartmentId</td>
-                        <td>@data.DepartmentName</td>
-                        <td>
-                            <a href="/Department/Details?departmentId=@data.DepartmentId" class="text-primary">
-                               View Details
-                            </a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">List of Department</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>SNO.</th>
+                            <th>Department ID</th>
+                            <th>Department Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model.DeptList)
+                        {
+                            <tr>
+                                <td>@(count += 1)</td>
+                                <td>@data.DepartmentId</td>
+                                <td>@data.DepartmentName</td>
+                                <td><a href="/Department/Details?departmentId=@data.DepartmentId">View Details...</a></td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</body>
+
+</div>
+<!-- End of Main Content -->
