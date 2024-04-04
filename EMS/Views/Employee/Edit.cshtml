@@ -29,7 +29,7 @@
 							<label for="Gender" class="my-1">
 								Gender
 							</label>
-							<select class="form-select" asp-for="Gender">
+							<select class="form-select form-control" asp-for="Gender">
 								<option value=0>Select Gender</option>
 								<option value=1>Male</option>
 								<option value=2>Female</option>
@@ -59,7 +59,7 @@
 						<label for="ProfilePath" class="my-1">
 							Profile Image
 						</label>
-						<input type="file" asp-for="ProfilePath" class="form-control" />
+						<input type="file" asp-for="ProfilePath" class="form-control" id="formFile" />
 					</div>
 					<input type="submit" value="Save" class="btn btn-primary my-3" />
 

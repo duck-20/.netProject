@@ -59,14 +59,14 @@ namespace EMS.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: false, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    //var user = await _userManager.FindByNameAsync(model.UserName);
+                    //var user = await _userManager.FindByNameAsync(model.Email);
                     //user role list here
                     //var roles = await _userManager.GetRolesAsync(user);
                     //get default role here
@@ -77,6 +77,5 @@ namespace EMS.Controllers
             ModelState.AddModelError("", "Invalid ID or Password");
             return View(model);
         }
-
     }
 }
